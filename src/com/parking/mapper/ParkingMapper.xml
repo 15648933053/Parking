@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.parking.mapper.ParkingMapper">
+  <update id="updParkingByOption" parameterType="com.parking.Parking">
+  	update parking 
+  	<set>
+  		<if test="username != null and username != ''">
+  			username = #{username},
+  		</if>
+  		<if test="carnum != null and carnum != ''">
+  			carnum = #{carnum},
+  		</if>
+  		<if test="begintime != null and begintime != '' ">
+  			begintime = #{begintime},
+  		</if>
+  		<if test="endtime != null and endtime !=''">
+  			endtime = #{endtime},
+  		</if>
+  		<if test="totaltime != null and totaltime != ''">
+  			totaltime = #{totaltime},
+  		</if>
+  		<if test="money != 0">
+  			money = #{money},
+  		</if>
+  		<if test="is_delete != 0">
+  			is_delete = #{delete},
+  		</if>
+  	</set>
+  	where id = #{id}
+  </update>
+  </mapper>

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Parking {
 
+	private int id;
 	private String username;
 	private String carnum;
 	private Date begintime;
@@ -12,6 +13,13 @@ public class Parking {
 	private Time totaltime;
 	private int money;
 	private int is_delete;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getUsername() {
 		return username;
 	}
